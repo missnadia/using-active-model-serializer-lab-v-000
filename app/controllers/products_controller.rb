@@ -7,16 +7,6 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
-  def inventory
-   product = Product.find(params[:id])
-   render plain: product.inventory > 0 ? true : false
- end
-
- def description
-   product = Product.find(params[:id])
-   render plain: product.description
- end
-
   def create
     Product.create(product_params)
     redirect_to products_path
